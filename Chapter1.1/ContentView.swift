@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var message = "Come as you are"
+    @State private var imageName = "crown"
     var body: some View {
         
         VStack {
             
             Spacer()
             
-            Image(systemName: "crown")
+            Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.pink)
@@ -31,10 +32,17 @@ struct ContentView: View {
             HStack {
                 Button("Click Me") {
                     message = "Drive from acceptance, not fear"
+                    imageName = "bolt.heart.fill"
+                }
+                
+                Button("Me") {
+                        message = "Feel freedom, joy, curiosity"
+                        imageName = "figure.run"
                 }
                 
                 Button("Or Me") {
-                        message = "Feel freedom, joy, curiosity"
+                        message = "Explore to keep fueling your fire"
+                        imageName = "flame"
                 }
                 }
             .buttonStyle(.bordered)
