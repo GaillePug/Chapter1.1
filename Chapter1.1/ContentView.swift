@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Chapter1.1
+//  Chapter1
 //
 //  Created by Teresa Gaille Teo on 3/12/25.
 //
@@ -10,18 +10,38 @@ import SwiftUI
 struct ContentView: View {
     @State private var message = "Come as you are"
     var body: some View {
+        
         VStack {
+            
+            Spacer()
+            
             Image(systemName: "crown")
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.pink)
+                .frame(width: 200, height: 200)
+            
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.heavy)
+                .fontWeight(.regular)
                 .foregroundStyle(.pink)
-            Button("Click Me!") {
-                message = "Drive from a place of acceptance, not fear"
-            }
+           
+            Spacer()
+            
+            HStack {
+                Button("Click Me") {
+                    message = "Drive from acceptance, not fear"
+                }
+                
+                Button("Or Me") {
+                        message = "Feel freedom, joy, curiosity"
+                }
+                }
+            .buttonStyle(.bordered)
+            .font(.title2)
+            .foregroundStyle(.pink)
+            .tint(.gray)
+            
         }
         .padding()
     }
