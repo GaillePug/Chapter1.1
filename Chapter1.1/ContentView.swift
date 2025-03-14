@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = "Come as you are"
     var body: some View {
         VStack {
             Image(systemName: "crown")
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.pink)
-            Text("Come as you are")
+            Text(message)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundStyle(.pink)
+            Button("Click Me!") {
+                message = "Drive from a place of acceptance, not fear"
+            }
         }
         .padding()
     }
